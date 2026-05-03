@@ -467,7 +467,7 @@ body.anim-mode .section-title { color: var(--anim-text); font-family: 'Nunito', 
    ============================================================ */
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(195px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 1px;
   border-radius: 16px;
   overflow: hidden;
@@ -718,7 +718,7 @@ body.anim-mode footer { background: var(--anim-bg); border-top: 1px solid var(--
 @media (max-width: 1024px) {
   .hero .switch-wrap { gap: 2.5rem; }
   .terminal-body { font-size: 0.72rem; }
-  .skills-grid { grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); }
+  .skills-grid { grid-template-columns: repeat(4, 1fr); }
 }
 
 /* ============================================================
