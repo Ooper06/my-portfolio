@@ -3,6 +3,27 @@ const body      = document.body;
 const ripple    = document.getElementById('ripple');
 const thumbIcon = document.getElementById('thumbIcon');
 const navLogo   = document.getElementById('navLogo');
+const ageValue  = document.getElementById('ageValue');
+const birthDate = new Date('1997-08-26');
+
+function getAge(birthDate) {
+  const today = new Date();
+  let age = today.getFullYear() - birthDate.getFullYear();
+  const monthDiff = today.getMonth() - birthDate.getMonth();
+  const dayDiff = today.getDate() - birthDate.getDate();
+  if (monthDiff < 0 || (monthDiff === 0 && dayDiff < 0)) {
+    age -= 1;
+  }
+  return age;
+}
+
+function updateAge() {
+  if (ageValue) {
+    ageValue.textContent = getAge(birthDate);
+  }
+}
+
+updateAge();
 
 /* ---------- RIPPLE ---------- */
 function fireRipple(isAnim, fromEl) {
