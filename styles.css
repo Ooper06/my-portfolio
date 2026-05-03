@@ -242,6 +242,24 @@ body.anim-mode .nav-links a:hover { color: var(--anim-text); }
 }
 @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
 
+/* ---- Avatar (dev) ---- */
+.hero-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-bottom: 1.6rem;
+  border: 2px solid var(--dev-accent);
+  box-shadow: 0 0 0 4px rgba(0,245,160,0.1);
+  flex-shrink: 0;
+}
+.hero-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
 /* ---- Anim card (animateur) ---- */
 .anim-card-hero {
   width: 100%;
@@ -265,6 +283,14 @@ body.anim-mode .nav-links a:hover { color: var(--anim-text); }
   position: relative;
   overflow: hidden;
   box-shadow: 0 20px 60px rgba(255,107,53,0.2);
+}
+.anim-photo {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
 }
 .anim-photo-placeholder::after {
   content: '';
@@ -498,6 +524,15 @@ body.anim-mode .skill-bar { background: var(--anim-border); }
 body.dev-mode  .skill-fill { background: var(--dev-accent); }
 body.anim-mode .skill-fill { background: var(--anim-accent); }
 
+.skill-sub {
+  font-size: 0.63rem;
+  line-height: 1.45;
+  margin-top: 0.22rem;
+  transition: color 0.5s;
+}
+body.dev-mode  .skill-sub { color: var(--dev-muted); font-family: 'DM Mono', monospace; }
+body.anim-mode .skill-sub { color: var(--anim-muted); font-family: 'Nunito', sans-serif; font-size: 0.74rem; }
+
 /* ============================================================
    EXPERIENCE LIST
    ============================================================ */
@@ -572,6 +607,12 @@ body.anim-mode .exp-role { color: var(--anim-text); font-family: 'Nunito', sans-
 }
 body.dev-mode  .exp-desc { color: var(--dev-muted); font-family: 'DM Mono', monospace; }
 body.anim-mode .exp-desc { color: var(--anim-muted); font-family: 'Nunito', sans-serif; font-size: 0.88rem; }
+
+.exp-desc ul { list-style: none; padding-left: 0; margin-top: 0.35rem; display: flex; flex-direction: column; gap: 0.22rem; }
+.exp-desc li { display: flex; gap: 0.55rem; line-height: 1.65; }
+.exp-desc li::before { content: '›'; flex-shrink: 0; transition: color 0.5s; }
+body.dev-mode  .exp-desc li::before { color: var(--dev-accent); }
+body.anim-mode .exp-desc li::before { color: var(--anim-accent); }
 
 /* ============================================================
    STATS
