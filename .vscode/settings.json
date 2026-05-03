@@ -1,0 +1,8 @@
+{
+    "chat.tools.terminal.autoApprove": {
+        "/^cd /Users/mathieu/Dev/Portfolio/my-portfolio && python3 - <<'PY'\nfrom pathlib import Path\npath = Path\\('portfolio_mathieu_rizzi_v3\\.html'\\)\ntext = path\\.read_text\\(\\)\nstart = text\\.find\\('<style>'\\)\nend = text\\.find\\('</style>', start\\)\nif start == -1 or end == -1:\n    raise SystemExit\\('style block not found'\\)\nnew = text\\[:start\\] \\+ '<link rel=\"stylesheet\" href=\"styles\\.css\">\\\\n' \\+ text\\[end\\+8:\\]\npath\\.write_text\\(new\\)\nprint\\('replaced style block'\\)\nPY$/": {
+            "approve": true,
+            "matchCommandLine": true
+        }
+    }
+}
