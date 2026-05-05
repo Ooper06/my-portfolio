@@ -1,25 +1,51 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mathieu Rizzi</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Mono:wght@400;500&family=Nunito:wght@400;700;800;900&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mathieu Rizzi — Développeur Full-Stack & Animateur</title>
 
-<link rel="stylesheet" href="styles.css">
+  <!-- SEO -->
+  <meta name="description" content="Mathieu Rizzi — Développeur Full-Stack (PHP, React, Docker) basé à Lausanne / Genève. Également animateur et responsable de camp. Ouvert aux opportunités.">
+  <meta name="author" content="Mathieu Rizzi">
+  <meta name="robots" content="index, follow">
 
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website">
+  <meta property="og:title"       content="Mathieu Rizzi — Développeur Full-Stack & Animateur">
+  <meta property="og:description" content="Portfolio de Mathieu Rizzi : développeur PHP/React/Docker avec 4+ ans d'expérience à Lausanne, et responsable de camp chez Evazion.">
+  <meta property="og:image"       content="assets/img/image-pp.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Mathieu Rizzi — Développeur Full-Stack & Animateur">
+  <meta name="twitter:description" content="Portfolio de Mathieu Rizzi : développeur PHP/React/Docker avec 4+ ans d'expérience à Lausanne.">
+  <meta name="twitter:image"       content="assets/img/image-pp.png">
+
+  <!-- Theme color (dark — site starts in dev-mode) -->
+  <meta name="theme-color" content="#080b12">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Mono:wght@400;500&family=Nunito:wght@400;700;800;900&family=Instrument+Serif:ital@1&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/nav.css">
+  <link rel="stylesheet" href="assets/css/hero.css">
+  <link rel="stylesheet" href="assets/css/sections.css">
+  <link rel="stylesheet" href="assets/css/responsive.css">
 </head>
 
-<!-- body commence toujours en dev-mode -->
 <body class="dev-mode">
 
-<div class="ripple-overlay" id="ripple"></div>
+<div class="ripple-overlay" id="ripple" aria-hidden="true"></div>
 
 <!-- ============================================================
      NAV
      ============================================================ -->
-<nav>
+<nav aria-label="Navigation principale">
   <a href="#" class="nav-logo" id="navLogo">MR/</a>
   <ul class="nav-links">
     <li><a href="#skills">Compétences</a></li>
@@ -27,29 +53,41 @@
     <li><a href="#contact">Contact</a></li>
   </ul>
   <div class="mode-toggle-wrap">
-    <span class="mode-label lbl-dev">Dev</span>
-    <label class="ios-toggle" title="Changer de profil">
-      <input type="checkbox" id="modeSwitch">
+    <span class="mode-label lbl-dev" aria-hidden="true">Dev</span>
+    <label class="ios-toggle" aria-label="Basculer entre profil développeur et animateur">
+      <input
+        type="checkbox"
+        id="modeSwitch"
+        role="switch"
+        aria-checked="false"
+        aria-label="Mode animateur">
       <div class="ios-track"></div>
-      <div class="ios-thumb" id="thumbIcon">⌨️</div>
+      <div class="ios-thumb" id="thumbIcon" aria-hidden="true">⌨️</div>
     </label>
-    <span class="mode-label lbl-anim">Animateur</span>
+    <span class="mode-label lbl-anim" aria-hidden="true">Animateur</span>
   </div>
 </nav>
 
 <!-- ============================================================
+     MAIN
+     ============================================================ -->
+<main>
+
+<!-- ============================================================
      HERO
      ============================================================ -->
-<section class="hero" id="home">
-  <div class="hero-bg-dev"></div>
-  <div class="hero-bg-anim"></div>
-  <div id="particles"></div>
+<section class="hero" id="home" aria-label="Introduction">
+  <div class="hero-bg-dev" aria-hidden="true"></div>
+  <div class="hero-bg-anim" aria-hidden="true"></div>
+  <div id="particles" aria-hidden="true"></div>
 
   <div class="switch-wrap">
 
     <!-- ===== DEV : texte gauche + terminal droite ===== -->
     <div class="dev-content hero-left">
-      <div class="hero-avatar"><img src="assets/img/image-pp.png" alt="Mathieu Rizzi"></div>
+      <div class="hero-avatar">
+        <img src="assets/img/image-pp.png" alt="Photo de profil de Mathieu Rizzi" width="64" height="64">
+      </div>
       <div class="hero-eyebrow">Développeur Full-Stack · Lausanne / Genève</div>
       <h1 class="hero-name">Mathieu<br><span class="acc">Rizzi</span></h1>
       <div class="hero-role">Code with purpose.</div>
@@ -61,8 +99,8 @@
       </div>
     </div>
 
-    <div class="dev-content hero-right">
-      <div class="terminal">
+    <div class="dev-content hero-right" aria-hidden="true">
+      <div class="terminal" role="img" aria-label="Extrait de code JavaScript présentant le profil développeur">
         <div class="terminal-bar">
           <div class="term-dot r"></div>
           <div class="term-dot y"></div>
@@ -98,13 +136,15 @@
       </div>
     </div>
 
-    <div class="anim-content hero-right">
+    <div class="anim-content hero-right" aria-hidden="true">
       <div class="anim-card-hero">
-        <div class="anim-photo-placeholder"><img src="assets/img/image-pp.png" alt="Mathieu Rizzi" class="anim-photo"></div>
+        <div class="anim-photo-placeholder">
+          <img src="assets/img/image-pp.png" alt="" class="anim-photo" loading="lazy">
+        </div>
         <div class="anim-badges">
           <div class="anim-badge orange">🏆 Resp. de camp 2025</div>
           <div class="anim-badge yellow">🎬 Moniteur Cinéma</div>
-          <div class="anim-badge green">📜 BAFA parties 1 & 2</div>
+          <div class="anim-badge green">📜 BAFA parties 1 &amp; 2</div>
           <div class="anim-badge orange">👥 25+ moniteurs managés</div>
           <div class="anim-badge yellow">⭐ 300+ enfants encadrés</div>
           <div class="anim-badge green">🏔️ 6 étés en Suisse</div>
@@ -120,37 +160,37 @@
 <!-- ============================================================
      SKILLS
      ============================================================ -->
-<section id="skills">
+<section id="skills" aria-labelledby="skills-dev-title skills-anim-title">
   <div class="section-inner">
     <div class="switch-wrap">
 
       <div class="dev-content reveal">
         <div class="section-eyebrow">Stack technique</div>
-        <h2 class="section-title">Ce que je maîtrise</h2>
+        <h2 class="section-title" id="skills-dev-title">Ce que je maîtrise</h2>
         <div class="skills-grid">
-          <div class="skill-card"><span class="skill-icon">⚛️</span><div class="skill-name">React / Express</div><div class="skill-sub">SPA, APIs REST, state management</div><div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div></div>
-          <div class="skill-card"><span class="skill-icon">🐘</span><div class="skill-name">PHP / Symfony</div><div class="skill-sub">Back-end MVC, e-commerce, bots, emailings</div><div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div></div>
-          <div class="skill-card"><span class="skill-icon">🗄️</span><div class="skill-name">MySQL / SQL</div><div class="skill-sub">Modélisation relationnelle, requêtes complexes, automatisation</div><div class="skill-bar"><div class="skill-fill" style="width:82%"></div></div></div>
-          <div class="skill-card"><span class="skill-icon">🐳</span><div class="skill-name">Docker / Git</div><div class="skill-sub">Containerisation, GitLab, gestion de branches</div><div class="skill-bar"><div class="skill-fill" style="width:78%"></div></div></div>
-          <div class="skill-card"><span class="skill-icon">🌐</span><div class="skill-name">WordPress / HTML/CSS</div><div class="skill-sub">Thèmes sur mesure, landing pages, responsive</div><div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div></div>
-          <div class="skill-card"><span class="skill-icon">🐍</span><div class="skill-name">Python / Bash</div><div class="skill-sub">Scripts d'automatisation, parsing, administration</div><div class="skill-bar"><div class="skill-fill" style="width:65%"></div></div></div>
-          <div class="skill-card"><span class="skill-icon">📊</span><div class="skill-name">Jira / Support N1-N2</div><div class="skill-sub">Gestion de tickets, diagnostic, accompagnement utilisateur</div><div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div></div>
-          <div class="skill-card"><span class="skill-icon">🖥️</span><div class="skill-name">Linux / macOS / Win</div><div class="skill-sub">CLI, déploiement serveur, environnements multi-OS</div><div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div></div>
+          <div class="skill-card"><span class="skill-icon" aria-hidden="true">⚛️</span><div class="skill-name">React / Express</div><div class="skill-sub">SPA, APIs REST, state management</div><div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div></div>
+          <div class="skill-card"><span class="skill-icon" aria-hidden="true">🐘</span><div class="skill-name">PHP / Symfony</div><div class="skill-sub">Back-end MVC, e-commerce, bots, emailings</div><div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div></div>
+          <div class="skill-card"><span class="skill-icon" aria-hidden="true">🗄️</span><div class="skill-name">MySQL / SQL</div><div class="skill-sub">Modélisation relationnelle, requêtes complexes, automatisation</div><div class="skill-bar"><div class="skill-fill" style="width:82%"></div></div></div>
+          <div class="skill-card"><span class="skill-icon" aria-hidden="true">🐳</span><div class="skill-name">Docker / Git</div><div class="skill-sub">Containerisation, GitLab, gestion de branches</div><div class="skill-bar"><div class="skill-fill" style="width:78%"></div></div></div>
+          <div class="skill-card"><span class="skill-icon" aria-hidden="true">🌐</span><div class="skill-name">WordPress / HTML/CSS</div><div class="skill-sub">Thèmes sur mesure, landing pages, responsive</div><div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div></div>
+          <div class="skill-card"><span class="skill-icon" aria-hidden="true">🐍</span><div class="skill-name">Python / Bash</div><div class="skill-sub">Scripts d'automatisation, parsing, administration</div><div class="skill-bar"><div class="skill-fill" style="width:65%"></div></div></div>
+          <div class="skill-card"><span class="skill-icon" aria-hidden="true">📊</span><div class="skill-name">Jira / Support N1-N2</div><div class="skill-sub">Gestion de tickets, diagnostic, accompagnement utilisateur</div><div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div></div>
+          <div class="skill-card"><span class="skill-icon" aria-hidden="true">🖥️</span><div class="skill-name">Linux / macOS / Win</div><div class="skill-sub">CLI, déploiement serveur, environnements multi-OS</div><div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div></div>
         </div>
       </div>
 
       <div class="anim-content reveal">
         <div class="section-eyebrow">🌟 Atouts</div>
-        <h2 class="section-title">Ce que j'apporte</h2>
+        <h2 class="section-title" id="skills-anim-title">Ce que j'apporte</h2>
         <div class="skills-grid">
-          <div class="skill-card"><span class="skill-icon">🎭</span><div class="skill-name">Animation & activités</div><div class="skill-sub">JO, veillées, ateliers créatifs — 6 à 17 ans</div><div class="skill-bar"><div class="skill-fill" style="width:95%"></div></div></div>
-          <div class="skill-card"><span class="skill-icon">🎬</span><div class="skill-name">Cinéma & multimédia</div><div class="skill-sub">Scénario, tournage, montage, réseaux sociaux</div><div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div></div>
-          <div class="skill-card"><span class="skill-icon">👥</span><div class="skill-name">Gestion d'équipe</div><div class="skill-sub">Management de 13 moniteurs, briefings, médiation</div><div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div></div>
-          <div class="skill-card"><span class="skill-icon">🏕️</span><div class="skill-name">Logistique de camp</div><div class="skill-sub">Planning, repas, matériel, prestataires, imprévus</div><div class="skill-bar"><div class="skill-fill" style="width:92%"></div></div></div>
-          <div class="skill-card"><span class="skill-icon">📚</span><div class="skill-name">Pédagogie</div><div class="skill-sub">Transmission adaptée : enfants, ados, étudiants</div><div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div></div>
-          <div class="skill-card"><span class="skill-icon">💬</span><div class="skill-name">Comm. parents/équipe</div><div class="skill-sub">Relation familles, direction, prestataires externes</div><div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div></div>
-          <div class="skill-card"><span class="skill-icon">🔧</span><div class="skill-name">Adaptation & résilience</div><div class="skill-sub">Gestion d'imprévus, réorganisation sous contrainte</div><div class="skill-bar"><div class="skill-fill" style="width:95%"></div></div></div>
-          <div class="skill-card"><span class="skill-icon">📜</span><div class="skill-name">BAFA (Parties 1 & 2)</div><div class="skill-sub">Formation théorique et pratique — obtenu en 2017</div><div class="skill-bar"><div class="skill-fill" style="width:100%"></div></div></div>
+          <div class="skill-card"><span class="skill-icon" aria-hidden="true">🎭</span><div class="skill-name">Animation & activités</div><div class="skill-sub">JO, veillées, ateliers créatifs — 6 à 17 ans</div><div class="skill-bar"><div class="skill-fill" style="width:95%"></div></div></div>
+          <div class="skill-card"><span class="skill-icon" aria-hidden="true">🎬</span><div class="skill-name">Cinéma & multimédia</div><div class="skill-sub">Scénario, tournage, montage, réseaux sociaux</div><div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div></div>
+          <div class="skill-card"><span class="skill-icon" aria-hidden="true">👥</span><div class="skill-name">Gestion d'équipe</div><div class="skill-sub">Management de 13 moniteurs, briefings, médiation</div><div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div></div>
+          <div class="skill-card"><span class="skill-icon" aria-hidden="true">🏕️</span><div class="skill-name">Logistique de camp</div><div class="skill-sub">Planning, repas, matériel, prestataires, imprévus</div><div class="skill-bar"><div class="skill-fill" style="width:92%"></div></div></div>
+          <div class="skill-card"><span class="skill-icon" aria-hidden="true">📚</span><div class="skill-name">Pédagogie</div><div class="skill-sub">Transmission adaptée : enfants, ados, étudiants</div><div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div></div>
+          <div class="skill-card"><span class="skill-icon" aria-hidden="true">💬</span><div class="skill-name">Comm. parents/équipe</div><div class="skill-sub">Relation familles, direction, prestataires externes</div><div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div></div>
+          <div class="skill-card"><span class="skill-icon" aria-hidden="true">🔧</span><div class="skill-name">Adaptation & résilience</div><div class="skill-sub">Gestion d'imprévus, réorganisation sous contrainte</div><div class="skill-bar"><div class="skill-fill" style="width:95%"></div></div></div>
+          <div class="skill-card"><span class="skill-icon" aria-hidden="true">📜</span><div class="skill-name">BAFA (Parties 1 & 2)</div><div class="skill-sub">Formation théorique et pratique — obtenu en 2017</div><div class="skill-bar"><div class="skill-fill" style="width:100%"></div></div></div>
         </div>
       </div>
 
@@ -163,13 +203,13 @@
 <!-- ============================================================
      EXPERIENCE
      ============================================================ -->
-<section id="experience">
+<section id="experience" aria-labelledby="exp-dev-title exp-anim-title">
   <div class="section-inner">
     <div class="switch-wrap">
 
       <div class="dev-content reveal">
         <div class="section-eyebrow">Expériences</div>
-        <h2 class="section-title">Parcours dev</h2>
+        <h2 class="section-title" id="exp-dev-title">Parcours dev</h2>
         <div class="exp-list">
           <div class="exp-card">
             <div class="exp-date">jan. 2025 →<br>en cours</div>
@@ -219,7 +259,7 @@
                 <li>Ambassadeur Epitech sur salons étudiants et journées portes ouvertes</li>
                 <li>Délégué de promotion pendant 2 années consécutives</li>
                 <li>Assistant piscine : aide aux nouveaux étudiants de 1ʳᵉ année durant l'immersion en langage C</li>
-                <li>Intervenant projet inter-écoles Epitech-ISEG: cours HTML/CSS/PHP/JAVASCRIPT/SQL pour étudiants d'école de commerce</li>
+                <li>Intervenant projet inter-écoles Epitech-ISEG : cours HTML/CSS/PHP/JAVASCRIPT/SQL pour étudiants d'école de commerce</li>
               </ul></div>
             </div>
           </div>
@@ -246,7 +286,7 @@
 
       <div class="anim-content reveal">
         <div class="section-eyebrow">🏕️ Expériences</div>
-        <h2 class="section-title">Parcours animation</h2>
+        <h2 class="section-title" id="exp-anim-title">Parcours animation</h2>
         <div class="exp-list">
           <div class="exp-card">
             <div class="exp-date">Été 2025</div>
@@ -357,33 +397,35 @@
 <!-- ============================================================
      CONTACT
      ============================================================ -->
-<section class="contact-section" id="contact">
+<section class="contact-section" id="contact" aria-labelledby="contact-dev-title contact-anim-title">
   <div class="switch-wrap">
 
     <div class="dev-content reveal">
-      <div class="section-eyebrow" style="justify-content:center;margin-bottom:1.2rem">Contact</div>
-      <div class="contact-big">Collaborons.</div>
+      <div class="section-eyebrow">Contact</div>
+      <div class="contact-big" id="contact-dev-title">Collaborons.</div>
       <p class="contact-sub">Ouvert aux opportunités dev — Genève, Lausanne ou télétravail. Freelance ou CDI/CDD.</p>
       <div class="contact-row">
         <a href="mailto:mathieu.it@outlook.com" class="contact-chip">✉ mathieu.it@outlook.com</a>
         <a href="tel:+33743673032" class="contact-chip">📱 +33 7 43 67 30 32</a>
-        <a href="#" class="contact-chip">📄 CV Dev (PDF)</a>
+        <a class="contact-chip" aria-disabled="true" title="CV disponible bientôt">📄 CV Dev (PDF)</a>
       </div>
     </div>
 
     <div class="anim-content reveal">
-      <div class="section-eyebrow" style="justify-content:center;margin-bottom:1.2rem">🙌 Contact</div>
-      <div class="contact-big">On fait équipe ?</div>
+      <div class="section-eyebrow">🙌 Contact</div>
+      <div class="contact-big" id="contact-anim-title">On fait équipe ?</div>
       <p class="contact-sub">Disponible pour camps, séjours, missions d'animation ou encadrement — Suisse ou France.</p>
       <div class="contact-row">
         <a href="mailto:mathieu.it@outlook.com" class="contact-chip">✉ mathieu.it@outlook.com</a>
         <a href="tel:+33743673032" class="contact-chip">📱 +33 7 43 67 30 32</a>
-        <a href="#" class="contact-chip">📄 CV Animateur (PDF)</a>
+        <a class="contact-chip" aria-disabled="true" title="CV disponible bientôt">📄 CV Animateur (PDF)</a>
       </div>
     </div>
 
   </div>
 </section>
+
+</main>
 
 <footer>
   <span>© 2025 Mathieu Rizzi</span>
@@ -391,9 +433,6 @@
   <span>Développeur &amp; Animateur</span>
 </footer>
 
-<!-- ============================================================
-     SCRIPT
-     ============================================================ -->
-<script src="script.js" defer></script>
+<script src="assets/js/main.js" defer></script>
 </body>
 </html>

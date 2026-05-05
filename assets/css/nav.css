@@ -1,0 +1,107 @@
+/* ============================================================
+   NAV + TOGGLE iOS
+   ============================================================ */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 200;
+  padding: 1.2rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  transition: background 0.65s, border-color 0.65s;
+}
+body.dev-mode  nav { background: rgba(8,11,18,0.88);     border-bottom: 1px solid var(--dev-border); }
+body.anim-mode nav { background: rgba(255,248,240,0.92); border-bottom: 1px solid var(--anim-border); }
+
+.nav-logo {
+  font-family: 'Syne', sans-serif;
+  font-weight: 800;
+  font-size: 1rem;
+  text-decoration: none;
+  transition: color 0.45s;
+}
+body.dev-mode  .nav-logo { color: var(--dev-accent);  font-family: 'Syne', sans-serif; }
+body.anim-mode .nav-logo { color: var(--anim-accent); font-family: 'Nunito', sans-serif; }
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 2.5rem;
+}
+.nav-links a {
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: color 0.4s;
+}
+body.dev-mode  .nav-links a       { color: var(--dev-muted); }
+body.dev-mode  .nav-links a:hover { color: var(--dev-text); }
+body.anim-mode .nav-links a       { color: var(--anim-muted); font-family: 'Nunito', sans-serif; }
+body.anim-mode .nav-links a:hover { color: var(--anim-text); }
+
+/* Toggle */
+.mode-toggle-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+.mode-label {
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  transition: color 0.4s, opacity 0.4s;
+  white-space: nowrap;
+}
+body.dev-mode  .mode-label.lbl-dev  { color: var(--dev-accent);  opacity: 1; }
+body.dev-mode  .mode-label.lbl-anim { color: var(--dev-muted);   opacity: 0.45; }
+body.anim-mode .mode-label.lbl-anim { color: var(--anim-accent); opacity: 1; }
+body.anim-mode .mode-label.lbl-dev  { color: var(--anim-muted);  opacity: 0.45; }
+
+.ios-toggle {
+  position: relative;
+  width: 58px;
+  height: 32px;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.ios-toggle input { opacity: 0; width: 0; height: 0; position: absolute; }
+
+.ios-track {
+  position: absolute;
+  inset: 0;
+  border-radius: 100px;
+  background: var(--dev-muted);
+  transition: background 0.4s ease;
+}
+.ios-toggle input:checked ~ .ios-track { background: var(--anim-accent); }
+
+/* Focus visible for keyboard nav */
+.ios-toggle input:focus-visible ~ .ios-track {
+  outline: 2px solid var(--dev-accent);
+  outline-offset: 3px;
+}
+body.anim-mode .ios-toggle input:focus-visible ~ .ios-track {
+  outline-color: var(--anim-accent);
+}
+
+.ios-thumb {
+  position: absolute;
+  top: 3px; left: 3px;
+  width: 26px; height: 26px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.28);
+  transition: transform 0.38s cubic-bezier(0.34,1.56,0.64,1);
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  user-select: none;
+}
+.ios-toggle input:checked ~ .ios-thumb { transform: translateX(26px); }

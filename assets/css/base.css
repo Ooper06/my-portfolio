@@ -1,0 +1,64 @@
+/* ============================================================
+   BASE — variables, reset, body, ripple overlay, switch-wrap,
+          scroll reveal
+   ============================================================ */
+:root {
+  --dev-bg:      #080b12;
+  --dev-surface: #0e1220;
+  --dev-border:  #1a2035;
+  --dev-accent:  #00f5a0;
+  --dev-accent2: #00b4d8;
+  --dev-text:    #e2e8f4;
+  --dev-muted:   #4a5578;
+  --dev-card:    #0c1120;
+
+  --anim-bg:      #fff8f0;
+  --anim-surface: #ffffff;
+  --anim-border:  #fde8d4;
+  --anim-accent:  #ff6b35;
+  --anim-accent2: #ffd166;
+  --anim-text:    #1a1206;
+  --anim-muted:   #a08060;
+  --anim-card:    #ffffff;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'DM Mono', monospace;
+  overflow-x: hidden;
+  min-height: 100vh;
+  transition: background 0.65s ease, color 0.65s ease;
+}
+body.dev-mode  { background: var(--dev-bg);  color: var(--dev-text); }
+body.anim-mode { background: var(--anim-bg); color: var(--anim-text); font-family: 'Nunito', sans-serif; }
+
+/* Ripple overlay */
+.ripple-overlay {
+  position: fixed;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: scale(0);
+  opacity: 0;
+}
+
+/* Switchable content */
+.switch-wrap { position: relative; }
+.dev-content,
+.anim-content {
+  transition: opacity 0.45s ease, visibility 0.45s ease;
+}
+body.dev-mode  .dev-content  { opacity: 1; visibility: visible; pointer-events: auto; height: auto; overflow: visible; }
+body.dev-mode  .anim-content { opacity: 0; visibility: hidden;  pointer-events: none; height: 0;    overflow: hidden;  }
+body.anim-mode .anim-content { opacity: 1; visibility: visible; pointer-events: auto; height: auto; overflow: visible; }
+body.anim-mode .dev-content  { opacity: 0; visibility: hidden;  pointer-events: none; height: 0;    overflow: hidden;  }
+
+/* Scroll reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.65s, transform 0.65s;
+}
+.reveal.visible { opacity: 1; transform: none; }
